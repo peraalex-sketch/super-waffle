@@ -1,0 +1,411 @@
+/* Color Palette & Design System */
+:root {
+  /* Primary Colors */
+  --color-primary: #003366;
+  --color-primary-medium: #1a5580;
+  --color-primary-light: #e6f0f7;
+
+  /* Secondary Colors */
+  --color-gold: #d4af37;
+  --color-gold-light: #f0e6d2;
+
+  /* Neutral Colors */
+  --color-text-dark: #2c2c2c;
+  --color-text-light: #999999;
+  --color-white: #ffffff;
+
+  /* Spacing System */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 20px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+
+  /* Responsive Sizes */
+  --carousel-width: 1080px;
+  --carousel-height: 1350px;
+  --carousel-aspect: 4 / 5;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.carousel-container {
+  max-width: var(--carousel-width);
+  margin: 0 auto;
+  aspect-ratio: var(--carousel-aspect);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Slide Base Styles */
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background-color: var(--color-white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 10;
+}
+
+/* Slide Overlay (for images) */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 51, 102, 0.75);
+  z-index: 1;
+}
+
+/* Slide Content */
+.slide-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Slide Typography */
+.slide-title {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+}
+
+.slide-subtitle {
+  color: var(--color-gold);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.slide-text {
+  color: var(--color-white);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.slide-highlight {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin: var(--spacing-md) 0;
+  line-height: 1.6;
+}
+
+.slide-footer {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+/* Dividers */
+.slide-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin: var(--spacing-md) auto;
+}
+
+/* Slide 2: Bio Specific */
+.slide-2 {
+  background-color: var(--color-white);
+}
+
+.slide-2 .slide-title {
+  color: var(--color-primary);
+}
+
+.slide-2 .slide-subtitle {
+  color: var(--color-primary-medium);
+}
+
+.slide-2 .slide-text {
+  color: var(--color-text-dark);
+}
+
+.slide-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.decorative-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--spacing-lg);
+}
+
+.decorative-dots::before,
+.decorative-dots::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}
+
+/* Slide 3: Timeline */
+.slide-3 {
+  background-color: var(--color-white);
+}
+
+.slide-3 .slide-title {
+  color: var(--color-primary);
+}
+
+.timeline {
+  width: 100%;
+  max-width: 600px;
+}
+
+.timeline-item {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+  text-align: left;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.timeline-item p {
+  color: var(--color-text-dark);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Slide 4: Services */
+.slide-4 {
+  background-color: var(--color-white);
+}
+
+.slide-4 .slide-title {
+  color: var(--color-primary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 600px;
+  margin-top: var(--spacing-lg);
+}
+
+.service-card {
+  background-color: rgba(26, 85, 128, 0.08);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+.service-card:hover {
+  background-color: rgba(26, 85, 128, 0.15);
+}
+
+.service-icon {
+  font-size: 1.75rem;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-title {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.service-text {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+/* Slide 5: CTA */
+.slide-5 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-medium) 100%);
+}
+
+.slide-5 .slide-title {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.slide-5 .slide-text {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-lg);
+  max-width: 500px;
+}
+
+.slide-5 .slide-divider {
+  margin-bottom: var(--spacing-xl);
+}
+
+.cta-buttons {
+  margin: var(--spacing-lg) 0;
+}
+
+.cta-text {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.slide-footer-info {
+  margin-top: var(--spacing-xl);
+  color: var(--color-gold-light);
+  font-size: 0.875rem;
+}
+
+.slide-footer-info p {
+  color: var(--color-white);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    --carousel-width: 100%;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+  }
+
+  .carousel-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slide-content {
+    padding: var(--spacing-lg);
+  }
+
+  .slide-title {
+    font-size: 1.5rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+
+  .slide-text {
+    font-size: 0.9375rem;
+  }
+
+  .slide-highlight {
+    font-size: 1.125rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .timeline-item {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .slide-footer-info {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 16px;
+    --spacing-md: 12px;
+  }
+
+  .carousel-container {
+    box-shadow: none;
+  }
+
+  .slide-content {
+    padding: var(--spacing-lg);
+  }
+
+  .slide-title {
+    font-size: 1.25rem;
+  }
+
+  .slide-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .slide-text,
+  .timeline-item p {
+    font-size: 0.875rem;
+  }
+
+  .slide-highlight {
+    font-size: 1rem;
+  }
+
+  .slide-icon {
+    font-size: 2rem;
+  }
+
+  .service-title {
+    font-size: 0.9375rem;
+  }
+
+  .service-text {
+    font-size: 0.8125rem;
+  }
+
+  .cta-text {
+    font-size: 1.0625rem;
+  }
+}
