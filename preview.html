@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar Slides - Dra. Tânia Pera</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 30px;
+    }
+    .slides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .slide-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .slide-card:hover {
+      transform: translateY(-5px);
+    }
+    .slide-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .slide-info {
+      padding: 15px;
+      background: #003366;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+    .full-carousel {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .carousel-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 80vh;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .info-box {
+      background: #e6f0f7;
+      border-left: 4px solid #d4af37;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Carrossel Instagram - Dra. Tânia Pera</h1>
+    
+    <div class="info-box">
+      <strong>✅ Status:</strong> Carrossel completo com 5 slides pronto para Instagram<br>
+      <strong>📐 Dimensão:</strong> 1080x1350px (padrão Instagram)<br>
+      <strong>🎨 Paleta:</strong> Professional Blue/Gold (#003366 + #d4af37)
+    </div>
+
+    <h2 style="color: #003366; text-align: center;">Preview dos 5 Slides</h2>
+    <div class="slides-grid">
+      <div class="slide-card">
+        <img src="images/slide-1-capa.jpg" alt="Slide 1: Capa">
+        <div class="slide-info">Slide 1: Capa</div>
+      </div>
+      <div class="slide-card">
+        <img src="images/slide-2-bio.jpg" alt="Slide 2: Bio">
+        <div class="slide-info">Slide 2: Bio</div>
+      </div>
+      <div class="slide-card">
+        <img src="images/slide-3-trajetoria.jpg" alt="Slide 3: Trajetória">
+        <div class="slide-info">Slide 3: Trajetória</div>
+      </div>
+      <div class="slide-card">
+        <img src="images/slide-4-atuacao.jpg" alt="Slide 4: Atuação">
+        <div class="slide-info">Slide 4: Atuação</div>
+      </div>
+      <div class="slide-card">
+        <img src="images/slide-5-cta.jpg" alt="Slide 5: CTA">
+        <div class="slide-info">Slide 5: CTA</div>
+      </div>
+    </div>
+
+    <h2 style="color: #003366; text-align: center;">Visualizar em Tela Cheia</h2>
+    <div style="text-align: center;">
+      <p>Clique em qualquer slide abaixo para ampliar:</p>
+    </div>
+    
+    <div class="full-carousel">
+      <h3>Slide 1: Capa</h3>
+      <img src="images/slide-1-capa.jpg" alt="Slide 1" class="carousel-img">
+      
+      <h3>Slide 2: Bio</h3>
+      <img src="images/slide-2-bio.jpg" alt="Slide 2" class="carousel-img">
+      
+      <h3>Slide 3: Trajetória</h3>
+      <img src="images/slide-3-trajetoria.jpg" alt="Slide 3" class="carousel-img">
+      
+      <h3>Slide 4: Atuação</h3>
+      <img src="images/slide-4-atuacao.jpg" alt="Slide 4" class="carousel-img">
+      
+      <h3>Slide 5: CTA</h3>
+      <img src="images/slide-5-cta.jpg" alt="Slide 5" class="carousel-img">
+    </div>
+
+    <div class="info-box" style="margin-top: 50px;">
+      <h3 style="margin-top: 0;">📱 Como usar no Instagram:</h3>
+      <ol>
+        <li>Vá em: <strong>Post → Múltiplas imagens/vídeos</strong></li>
+        <li>Selecione os 5 slides nesta ordem: 1, 2, 3, 4, 5</li>
+        <li>Adicione a seguinte legenda:</li>
+      </ol>
+      <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px; font-family: monospace; font-size: 12px;">
+📚 20 anos de direito tributário me ensinaram uma coisa:
+A maioria das entidades religiosas paga imposto que não deve.
+
+Sou Dra. Tânia Pera, advogada especialista em direito tributário.
+Atuo na Comissão do Terceiro Setor da OAB-SP ajudando igrejas, ONGs e associações a se defenderem.
+
+🔗 Me segue e ativa o sininho para aprender mais!
+
+#DireitoTributário #OAB #TerceiroSetor #Igrejas #ONGs #Tributação
+      </div>
+      <p><strong>4. Publique! 🚀</strong></p>
+    </div>
+  </div>
+</body>
+</html>

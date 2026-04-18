@@ -1,0 +1,139 @@
+/* Carousel Navigation Controls */
+.carousel-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  z-index: 20;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.nav-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.nav-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 51, 102, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  padding: 0;
+  font-size: 0;
+}
+
+.indicator:hover {
+  background-color: rgba(0, 51, 102, 0.5);
+  transform: scale(1.15);
+}
+
+.indicator.active {
+  background-color: var(--color-gold);
+  width: 14px;
+  height: 14px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .carousel-nav {
+    bottom: 20px;
+    gap: 16px;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.0625rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .indicator.active {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-nav {
+    bottom: 16px;
+    gap: 12px;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9375rem;
+    border-width: 1.5px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .indicator.active {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Keyboard Navigation Support */
+.nav-btn:focus,
+.indicator:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide,
+  .nav-btn,
+  .indicator {
+    transition: none;
+  }
+}
